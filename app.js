@@ -3,20 +3,20 @@ import { readFile } from "fs/promises";
 async function getStudent() {
   try {
     const [studentJSONData, coursesJSONData, gradesJSONData] = await Promise.all([
-      readFile("student.json"),
-      readFile("courses.json"),
-      readFile("grades.json"),
+      readFile("movie.json"),
+      readFile("actor.json"),
+      readFile("cinema.json"),
     ]);
   
-    const [student, courses, grades] =[
-      JSON.parse(studentJSONData),
-      JSON.parse(coursesJSONData),
-      JSON.parse(gradesJSONData),
+    const [movie, actor, cinema] =[
+      JSON.parse(movieJSONData),
+      JSON.parse(actorJSONData),
+      JSON.parse(cinemaJSONData),
     ]; 
     
-    console.log(`student: ${student.name}`);
-    console.log(`courses: ${courses.length}`);
-    console.log(`grades: ${grades.length}`);
+    console.log(`Movie: ${movie.name}`);
+    console.log(`Actors: ${actor.length}`);
+    console.log(`cinema: ${cinema.length}`);
   
   } catch (error) {
     console.error(error.message)
