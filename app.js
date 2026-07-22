@@ -2,7 +2,7 @@ import { readFile } from "fs/promises";
 
 async function getStudent() {
   try {
-    const [studentJSONData, coursesJSONData, gradesJSONData] = await Promise.all([
+    const [movieJSONData, actorJSONData, cinemaJSONData] = await Promise.all([
       readFile("movie.json"),
       readFile("actor.json"),
       readFile("cinema.json"),
